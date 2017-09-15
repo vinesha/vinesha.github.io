@@ -1,14 +1,14 @@
 <!doctype html>
 <html ng-app>
   <head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   </head>
   <body>
     <div ng-controller="MyController">
       <h1>Hello {{ clock }}! bla</h1>
     </div>
     <script type="text/javascript">
-      function MyController($scope) {
+      function MyController($scope,$interval) {
 	  
 	   var ctrl = this;
     //ctrl.data = "Hello";
@@ -17,7 +17,7 @@
         var updateClock = function() {
           $ctrl.clock = new Date();
         };
-        setInterval(function() {
+        $interval(function() {
           $scope.$apply(updateClock);
         }, 1000);
         updateClock();
