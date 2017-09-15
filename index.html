@@ -9,9 +9,13 @@
     </div>
     <script type="text/javascript">
       function MyController($scope) {
-        $scope.clock = new Date();
+	  
+	   var ctrl = this;
+    //ctrl.data = "Hello";
+	
+        ctrl.clock = new Date();
         var updateClock = function() {
-          $scope.clock = new Date();
+          $ctrl.clock = new Date();
         };
         setInterval(function() {
           $scope.$apply(updateClock);
