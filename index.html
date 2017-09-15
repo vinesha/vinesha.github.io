@@ -15,7 +15,7 @@
 	
         ctrl.clock = new Date();
         var updateClock = function() {
-          $ctrl.clock = new Date();
+          ctrl.clock = new Date();
         };
         $interval(function() {
           $scope.$apply(updateClock);
